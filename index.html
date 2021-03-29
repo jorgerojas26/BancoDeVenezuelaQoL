@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+  <link rel="icon" href="/favicon2.ico" />
+  <title>QoLBDV</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul id="controlDeOperaciones" class="fade navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Consultas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a id="posicionConsolidada" class="dropdown-item" href="#">Posición Consolidada</a></li>
+              <li><a id="movimientos" class="dropdown-item" href="#">Movimientos</a></li>
+              <li><a id="historicoDeOperaciones" class="dropdown-item" href="#">Histórico de Operaciones</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Transferencias
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a id="cuentasDeTerceros" class="dropdown-item" href="#">Cuentas De Terceros</a></li>
+              <li><a id="cuentasDeOtrosBancos" class="dropdown-item" href="#">Cuentas De Otros Bancos</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Pagos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a id="pagoClave" class="dropdown-item" href="#">PagoClave</a></li>
+              <li><a id="pagoDeServicios" class="dropdown-item" href="#">Pago De Servicios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a id="salir" class="nav-link active" aria-current="page" href="#">Salir</a>
+          </li>
+        </ul>
+        <form id="loginForm">
+          <input type="text" name="user" id="user" placeholder="Usuario" autoFocus required>
+          <input type="password" name="password" id="password" placeholder="Contraseña" required>
+          <input type="text" name="mediaHuella" id="mediaHuella" placeholder="Huella" required>
+          <input type="text" name="nroCuenta" id="nroCuenta" placeholder="Número de Cuenta">
+          <input type="checkbox" class="form-check-input" id="storage" checked>
+          <label class="form-check-label text-light" for="storage">Guardar</label>
+          <input type="submit" value="Enviar">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div id="accountCards" class="mt-2">
+
+  </div>
+  <div id="operaciones" class="d-none">
+    <!--
+    <h3 class="text-center">Posición Consolidada</h3>
+    <table id="tablaPoscionConsolidada" class="table table-striped table-bordered table-dark">
+      <thead>
+        <tr>
+          <th>Cuenta</th>
+          <th>Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+    </table>
+    -->
+    <h3 class="text-center">Últimos Movimientos</h3>
+    <table id="tablaMovimientos" class="table table-striped table-bordered table-dark">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Referencia</th>
+          <th>Descripción</th>
+          <th>Débito/Crédito</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </div>
+  <script src="./jquery.min.js"></script>
+  <script src="./bootstrap.bundle.min.js"></script>
+  <script src="./jquery.dataTables.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
